@@ -1,0 +1,30 @@
+1. Create a new dfx project.
+
+2. Delete the index.html, main.css and the index.js 
+   which is for the frontend.
+
+3. Create the react app somewhere and then move the 
+   index.html,index.js ( Rename it to index.jsx ) and components if there are 
+   any to the src below the assets folder. and move 
+   the style.css file in assets folder.
+
+4. Now goto file webpack.config.js and where it is commented as 
+   "frontend.entrypoint" change the ".js" extention to ".jsx"
+   In the same file there will be a section which will be commented 
+   you have to uncomment it. To find the section search for keyword 
+   "React" or "using react".
+
+5. Make a tsconfig.json file and write the content below and save it.
+   {
+    "compilerOptions": {
+        "target": "es2018",        /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
+        "lib": ["ES2018", "DOM"],  /* Specify library files to be included in the compilation. */
+        "allowJs": true,           /* Allow javascript files to be compiled. */
+        "jsx": "react",            /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    },
+    "include": ["src/**/*"],
+  }
+
+6. Change the content of package.json file. See the package.json file to see what to change.
+
+7. Now We can run the project as normal and the project will use React as a frontend.
