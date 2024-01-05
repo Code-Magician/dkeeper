@@ -1,7 +1,6 @@
 type Note = 
  record {
    content: text;
-   id: int;
    title: text;
  };
 service : {

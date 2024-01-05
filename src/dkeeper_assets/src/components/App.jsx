@@ -34,6 +34,25 @@ function App() {
 		});
 	}
 
+    async function editNotes(id, title, content) {
+        console.log(id + " " + title + " " + content);
+
+        setNotes(prevNotes => {
+            return prevNotes.map((noteItem, index) => {
+                if(index === id) {
+                    dkeeper.editNotes(id, title, content);
+
+                    noteItem.title = title;
+                    noteItem.content = content;
+
+                    console.log(noteItem);
+                }
+
+                return noteItem;
+            })
+        })
+    }
+
 	return (
 		<div>
 			<Header />
@@ -46,6 +65,7 @@ function App() {
 						title={noteItem.title}
 						content={noteItem.content}
 						onDelete={deleteNote}
+                        onEdit={editNotes}
 					/>
 				);
 			})}

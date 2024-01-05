@@ -3,6 +3,7 @@ export const idlFactory = ({ IDL }) => {
   return IDL.Service({
     'addNote' : IDL.Func([IDL.Text, IDL.Text], [], ['oneway']),
     'deleteNotes' : IDL.Func([IDL.Nat], [], ['oneway']),
+    'editNotes' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], ['oneway']),
     'getNotes' : IDL.Func([], [IDL.Vec(Note)], ['query']),
   });
 };
